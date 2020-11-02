@@ -1,22 +1,17 @@
-#!make
 
 all: build
 
-TAG?=$(shell bash -c 'git log --pretty=format:'%h' -n 1')
+TAG?=6bd516eacd6ee-10
 FLAGS=
 ENVVAR=
 GOOS?=darwin
 REGISTRY?=686244538589.dkr.ecr.us-east-2.amazonaws.com
 BASEIMAGE?=alpine:3.9
-#BUILD_NUMBER=$$(date +'%Y%m%d-%H%M%S')
-BUILD_NUMBER := $(shell bash -c 'echo $$(date +'%Y%m%d-%H%M%S')')
+include $(ENV_FILE)
 export
 
-build: clean wire
+build: clean
 	$(ENVVAR) GOOS=$(GOOS) go build -o go-junit-report
-
-wire:
-	wire
 
 clean:
 	rm -f go-junit-report
@@ -32,7 +27,3 @@ docker-build-image:  build
 docker-build-push: docker-build-image
 	docker tag go-junit-report:${TAG}  ${REGISTRY}/go-junit-report:${TAG}
 	docker push ${REGISTRY}/go-junit-report:${TAG}
-
-
-
-
