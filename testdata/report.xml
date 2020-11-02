@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite tests="6" failures="0" time="0.023" name="_/Users/vikram/workspace-all/go-junit-report">
+		<properties>
+			<property name="go.version" value="go1.14"></property>
+		</properties>
+		<testcase classname="go-junit-report" name="TestSuites_Unmarshal" time="0.000"></testcase>
+		<testcase classname="go-junit-report" name="TestParser" time="0.010"></testcase>
+		<testcase classname="go-junit-report" name="TestJUnitFormatter" time="0.000"></testcase>
+		<testcase classname="go-junit-report" name="TestVersionFlag" time="0.000"></testcase>
+		<testcase classname="go-junit-report" name="TestParseSeconds" time="0.000"></testcase>
+		<testcase classname="go-junit-report" name="TestParseNanoseconds" time="0.000"></testcase>
+	</testsuite>
+</testsuites>
